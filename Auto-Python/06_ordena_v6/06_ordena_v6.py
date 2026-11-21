@@ -122,22 +122,7 @@ ordenar_archivos(ruta)
 manejador_evento = ManejadorEventos()
 observador = Observer()
 observador.schedule(manejador_evento, ruta, recursive=False) # false para que no controle subcarpetas
-#observador.start()
 
-'''
-# lo hacemos de manera continua
-print(f"Vigilando la Carpeta {ruta}")
-print("Presiona 'Ctrl + C' para detener el programa")
-
-try:
-    while True:
-        time.sleep(1) # para que no consuma recursos
-except KeyboardInterrupt:
-    print("Deteniendo Vigilancia")
-    observador.stop()
-    
-observador.join() # aseguramos un cierre correcto
-'''
 
 def iniciar_vigilancia():
     observador.start()
